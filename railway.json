@@ -11,7 +11,10 @@
     },
     {
       "name": "backend",
-      "image": "ghcr.io/ankitgelda8/whatsapp-business-platform/backend:latest",
+      "build": {
+        "builder": "DOCKERFILE",
+        "dockerfilePath": "backend/Dockerfile"
+      },
       "variables": {
         "DATABASE_URL": {
           "description": "PostgreSQL connection string — auto-filled from the Postgres service",
@@ -45,7 +48,10 @@
     },
     {
       "name": "dashboard",
-      "image": "ghcr.io/ankitgelda8/whatsapp-business-platform/dashboard:latest",
+      "build": {
+        "builder": "DOCKERFILE",
+        "dockerfilePath": "dashboard/Dockerfile"
+      },
       "variables": {
         "VITE_API_URL": {
           "description": "Backend API URL — auto-filled, points to the backend service",
