@@ -1,0 +1,65 @@
+# Local development with Docker Compose
+# Uses the same pre-built images as the Railway template.
+# Run: docker compose up -d
+# Then open http://localhost:3000 (backend) and http://localhost:5173 (dashboard)
+
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: whatsapp
+      POSTGRES_PASSWORD: whatsapp123
+      POSTGRES_DB: whatsapp_business
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U whatsapp"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+
+  backend:
+    image: ghcr.io/ankitgelda8/whatsapp-business-platform/backend:latest
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgres://whatsapp:whatsapp123@postgres:5432/whatsapp_business
+      REDIS_URL: redis://redis:6379
+      JWT_SECRET: local-dev-secret-change-in-production
+      ADMIN_EMAIL: admin@local.dev
+      ADMIN_PASSWORD: admin123
+      NODE_ENV: production
+      PORT: "3000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    volumes:
+      - uploads_data:/app/uploads
+
+  dashboard:
+    image: ghcr.io/ankitgelda8/whatsapp-business-platform/dashboard:latest
+    ports:
+      - "80:80"
+    environment:
+      VITE_API_URL: http://localhost:3000/api/v1
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
+  redis_data:
+  uploads_data:
