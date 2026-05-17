@@ -11,10 +11,7 @@
     },
     {
       "name": "backend",
-      "build": {
-        "builder": "DOCKERFILE",
-        "dockerfilePath": "backend/Dockerfile"
-      },
+      "root": "backend",
       "variables": {
         "DATABASE_URL": {
           "description": "PostgreSQL connection string — auto-filled from the Postgres service",
@@ -48,10 +45,7 @@
     },
     {
       "name": "dashboard",
-      "build": {
-        "builder": "DOCKERFILE",
-        "dockerfilePath": "dashboard/Dockerfile"
-      },
+      "root": "dashboard",
       "variables": {
         "VITE_API_URL": {
           "description": "Backend API URL — auto-filled, points to the backend service",
