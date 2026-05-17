@@ -11,10 +11,9 @@
     },
     {
       "name": "backend",
-      "root": "backend",
       "build": {
         "builder": "DOCKERFILE",
-        "dockerfilePath": "Dockerfile"
+        "dockerfilePath": "backend/Dockerfile"
       },
       "variables": {
         "DATABASE_URL": "${{Postgres.DATABASE_URL}}",
@@ -53,10 +52,9 @@
     },
     {
       "name": "dashboard",
-      "root": "dashboard",
       "build": {
         "builder": "DOCKERFILE",
-        "dockerfilePath": "Dockerfile"
+        "dockerfilePath": "dashboard/Dockerfile"
       },
       "variables": {
         "VITE_API_URL": "https://${{backend.RAILWAY_PUBLIC_DOMAIN}}/api/v1"
