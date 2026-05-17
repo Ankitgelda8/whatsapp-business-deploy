@@ -19,18 +19,12 @@
       "variables": {
         "DATABASE_URL": "${{Postgres.DATABASE_URL}}",
         "REDIS_URL": "${{Redis.REDIS_URL}}",
-        "JWT_SECRET": {
-          "description": "JWT signing secret — generate any long random string (e.g. 64 random characters)",
-          "required": true
-        },
+        "JWT_SECRET": "${{secret(64, \"abcdef0123456789\")}}",
         "ADMIN_EMAIL": {
-          "description": "Email address you will use to log in to the dashboard",
+          "description": "Email for admin dashboard login",
           "default": "admin@example.com"
         },
-        "ADMIN_PASSWORD": {
-          "description": "Password for the admin dashboard account — choose a strong password",
-          "required": true
-        },
+        "ADMIN_PASSWORD": "${{secret(16)}}",
         "NODE_ENV": {
           "description": "Node environment",
           "default": "production"
@@ -41,13 +35,13 @@
         },
         "PUBLIC_URL": "https://${{RAILWAY_PUBLIC_DOMAIN}}",
         "TWILIO_ACCOUNT_SID": {
-          "description": "Twilio Account SID (optional — can also be configured via the in-app Settings wizard after deploy)"
+          "description": "Twilio Account SID (optional \u2014 can also be configured via the in-app Settings wizard after deploy)"
         },
         "TWILIO_AUTH_TOKEN": {
-          "description": "Twilio Auth Token (optional — can also be configured via the in-app Settings wizard after deploy)"
+          "description": "Twilio Auth Token (optional \u2014 can also be configured via the in-app Settings wizard after deploy)"
         },
         "TWILIO_WHATSAPP_NUMBER": {
-          "description": "Twilio WhatsApp sender number in format whatsapp:+1234567890 (optional — configurable in-app)"
+          "description": "Twilio WhatsApp sender number in format whatsapp:+1234567890 (optional \u2014 configurable in-app)"
         }
       }
     },
