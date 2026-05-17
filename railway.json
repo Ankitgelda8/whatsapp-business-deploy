@@ -11,7 +11,9 @@
     },
     {
       "name": "backend",
-      "root": "backend",
+      "source": {
+        "image": "ghcr.io/ankitgelda8/whatsapp-business-platform/backend:latest"
+      },
       "variables": {
         "DATABASE_URL": {
           "description": "PostgreSQL connection string — auto-filled from the Postgres service",
@@ -45,7 +47,9 @@
     },
     {
       "name": "dashboard",
-      "root": "dashboard",
+      "source": {
+        "image": "ghcr.io/ankitgelda8/whatsapp-business-platform/dashboard:latest"
+      },
       "variables": {
         "VITE_API_URL": {
           "description": "Backend API URL — auto-filled, points to the backend service",
