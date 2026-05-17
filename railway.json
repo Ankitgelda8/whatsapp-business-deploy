@@ -41,7 +41,13 @@
           "description": "Twilio Auth Token (optional \u2014 can also be configured via the in-app Settings wizard after deploy)"
         },
         "TWILIO_WHATSAPP_NUMBER": {
-          "description": "Twilio WhatsApp sender number in format whatsapp:+1234567890 (optional \u2014 configurable in-app)"
+          "description": "Twilio WhatsApp sender number in format whatsapp:+1234567890 (optional — configurable in-app)"
+        },
+        "GROK_API_KEY": {
+          "description": "xAI Grok API key for AI template generation (optional — get one at console.x.ai)"
+        },
+        "OPENAI_API_KEY": {
+          "description": "OpenAI API key for AI template generation (optional — get one at platform.openai.com/api-keys)"
         }
       }
     },
