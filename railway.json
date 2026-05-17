@@ -11,9 +11,10 @@
     },
     {
       "name": "backend",
+      "root": "backend",
       "build": {
         "builder": "DOCKERFILE",
-        "dockerfilePath": "backend/Dockerfile"
+        "dockerfilePath": "Dockerfile"
       },
       "variables": {
         "DATABASE_URL": {
@@ -61,9 +62,10 @@
     },
     {
       "name": "dashboard",
+      "root": "dashboard",
       "build": {
         "builder": "DOCKERFILE",
-        "dockerfilePath": "dashboard/Dockerfile"
+        "dockerfilePath": "Dockerfile"
       },
       "variables": {
         "VITE_API_URL": {
