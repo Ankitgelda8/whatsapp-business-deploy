@@ -44,10 +44,33 @@
           "description": "Twilio WhatsApp sender number in format whatsapp:+1234567890 (optional — configurable in-app)"
         },
         "GROK_API_KEY": {
-          "description": "xAI Grok API key for AI template generation (optional — get one at console.x.ai)"
+          "description": "xAI Grok API key for AI template generation + RAG smart replies (optional — get one at console.x.ai)"
         },
         "OPENAI_API_KEY": {
           "description": "OpenAI API key for AI template generation (optional — get one at platform.openai.com/api-keys)"
+        },
+        "RESEND_API_KEY": {
+          "description": "Resend API key for email fallback when WhatsApp delivery fails (optional — get one at resend.com)"
+        },
+        "BUSINESS_NAME": {
+          "description": "Your business name shown in the dashboard and outgoing messages",
+          "default": "My Business"
+        },
+        "FEATURE_CAMPAIGN_SCHEDULER": {
+          "description": "Enable campaign scheduler beta feature (true/false)",
+          "default": "true"
+        },
+        "FEATURE_EMAIL_SMS_FALLBACK": {
+          "description": "Enable email/SMS fallback when WhatsApp delivery fails (true/false)",
+          "default": "true"
+        },
+        "FEATURE_MULTILANGUAGE": {
+          "description": "Enable multi-language support for auto-replies (true/false)",
+          "default": "true"
+        },
+        "FEATURE_RAG_REPLIES": {
+          "description": "Enable RAG smart replies from your knowledge base (true/false)",
+          "default": "true"
         }
       }
     },

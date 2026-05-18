@@ -1,6 +1,6 @@
 # WhatsApp Business Automation Platform
 
-> Complete WhatsApp Business automation — AI-powered template generation, bulk campaigns, contacts CRM, two-way inbox, and analytics. Powered by **Twilio WhatsApp API** + **Grok / OpenAI**.
+> Complete WhatsApp Business automation — AI-powered template generation, bulk campaigns, contacts CRM, two-way inbox, analytics, and RAG smart replies. Powered by **Twilio WhatsApp API** + **Grok / OpenAI**.
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/Ankitgelda8/whatsapp-business-deploy)
 
@@ -26,10 +26,11 @@ Everything else (Postgres URL, Redis URL, dashboard API URL) is wired automatica
 
 | Variable | What to enter |
 |---|---|
-| `GROK_API_KEY` | Your xAI Grok API key from [console.x.ai](https://console.x.ai) — enables Grok-3-mini text + image generation |
+| `GROK_API_KEY` | Your xAI Grok API key from [console.x.ai](https://console.x.ai) — enables Grok-3 text + image generation + RAG smart replies |
 | `OPENAI_API_KEY` | Your OpenAI API key from [platform.openai.com/api-keys](https://platform.openai.com/api-keys) — enables GPT-4o-mini + DALL-E 3 |
+| `RESEND_API_KEY` | Your Resend API key from [resend.com](https://resend.com) — enables email fallback when WhatsApp delivery fails |
 
-You can also add/change these keys any time from **Settings → AI Settings** inside the app — no redeploy needed.
+You can also add/change these keys any time from **Settings** inside the app — no redeploy needed.
 
 ---
 
@@ -53,7 +54,7 @@ No terminal. No code. No environment variable editing.
 ## Features
 
 - ✨ **AI Template Generation** — describe your offer in plain English, Grok or GPT-4o writes the WhatsApp message and generates a product image automatically
-- 🖼️ **AI Image Generation** — Grok Imagine (grok-imagine-image-quality) or DALL-E 3 creates matching product/promo images
+- 🖼️ **AI Image Generation** — Grok Imagine or DALL-E 3 creates matching product/promo images
 - 📊 **Dashboard** — message stats, campaign performance, recent activity
 - 👥 **Contacts CRM** — import CSV, tags, notes, opt-in/out tracking
 - 📢 **Broadcast campaigns** — schedule bulk WhatsApp messages with templates
@@ -62,6 +63,34 @@ No terminal. No code. No environment variable editing.
 - 📈 **Analytics** — delivery rates, open rates, campaign trends
 - ⚙️ **In-app Twilio setup** — no env editing, complete guided wizard
 - 🔒 **Secure** — JWT auth, bcrypt passwords, admin-only access
+
+---
+
+## 🧪 Beta Features
+
+All beta features are **on by default**. Toggle them any time from **Settings → Features** — no redeploy needed.
+
+### 🤖 RAG Smart Replies
+Automatically answers incoming WhatsApp messages using your own knowledge base. Upload PDFs, TXT, or CSV files to the **Knowledge Base** page — the AI (Grok-3) reads them and crafts accurate replies.
+
+- Requires `GROK_API_KEY`
+- Toggle: `FEATURE_RAG_REPLIES=true/false`
+
+### 📅 Campaign Scheduler
+Queue campaigns to send at a future date/time using BullMQ. Works alongside existing broadcast campaigns.
+
+- Toggle: `FEATURE_CAMPAIGN_SCHEDULER=true/false`
+
+### 📧 Email / SMS Fallback
+When a WhatsApp message fails to deliver, the system automatically re-sends it via email (Resend) or SMS fallback.
+
+- Requires `RESEND_API_KEY`
+- Toggle: `FEATURE_EMAIL_SMS_FALLBACK=true/false`
+
+### 🌍 Multi-language Support
+Auto-detects the language of incoming messages and replies in the same language.
+
+- Toggle: `FEATURE_MULTILANGUAGE=true/false`
 
 ---
 
