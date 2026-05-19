@@ -29,6 +29,7 @@ Everything else (Postgres URL, Redis URL, dashboard API URL) is wired automatica
 | `GROK_API_KEY` | Your xAI Grok API key from [console.x.ai](https://console.x.ai) — enables Grok-3 text + image generation + RAG smart replies |
 | `OPENAI_API_KEY` | Your OpenAI API key from [platform.openai.com/api-keys](https://platform.openai.com/api-keys) — enables GPT-4o-mini + DALL-E 3 |
 | `RESEND_API_KEY` | Your Resend API key from [resend.com](https://resend.com) — enables email fallback when WhatsApp delivery fails |
+| `MESSAGE_RETENTION_DAYS` | Number of days to keep messages before auto-deletion (default: `15`, set `0` to disable) |
 
 You can also add/change these keys any time from **Settings** inside the app — no redeploy needed.
 
@@ -57,9 +58,11 @@ No terminal. No code. No environment variable editing.
 - 🖼️ **AI Image Generation** — Grok Imagine or DALL-E 3 creates matching product/promo images
 - 📊 **Dashboard** — message stats, campaign performance, recent activity
 - 👥 **Contacts CRM** — import CSV, tags, notes, opt-in/out tracking
-- 📢 **Broadcast campaigns** — schedule bulk WhatsApp messages with templates
+- 📢 **Broadcast campaigns** — schedule bulk WhatsApp messages with templates and real-time delivery sync
 - 📋 **Templates** — reusable message templates with `{{variable}}` substitution, image support, CTA buttons
-- 💬 **Inbox** — two-way messaging, conversation history, auto-creates contacts from incoming messages
+- 💬 **Inbox** — two-way messaging with chat UI, search contacts by name/phone, conversation bubbles, quick reply
+- 🚨 **Failure Logs** — automatic capture of campaign send failures and Twilio delivery failures (`failed`/`undelivered`)
+- 🗑️ **Message retention** — auto-delete messages older than N days (default: 15, configurable via `MESSAGE_RETENTION_DAYS`)
 - 📈 **Analytics** — delivery rates, open rates, campaign trends
 - ⚙️ **In-app Twilio setup** — no env editing, complete guided wizard
 - 🔒 **Secure** — JWT auth, bcrypt passwords, admin-only access
@@ -91,6 +94,15 @@ When a WhatsApp message fails to deliver, the system automatically re-sends it v
 Auto-detects the language of incoming messages and replies in the same language.
 
 - Toggle: `FEATURE_MULTILANGUAGE=true/false`
+
+### 📊 Campaign Delivery Sync
+Syncs real-time Twilio delivery status for all campaign messages. Click **Sync Status** on any campaign to pull the latest `sent / delivered / read / failed` status directly from Twilio.
+
+### 🚨 Failure Logs
+Automatically logs every campaign send failure and Twilio delivery failure. Each entry shows the contact, message, error reason, and timestamp. Visible from **Failure Logs** in the sidebar.
+
+### 🗑️ Message Retention
+Auto-cleans old messages on a configurable schedule. Set the retention period in the **Messages** page or via the `MESSAGE_RETENTION_DAYS` environment variable (default: 15 days). Set to `0` to disable.
 
 ---
 
