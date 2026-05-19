@@ -2,7 +2,7 @@
 
 > Complete WhatsApp Business automation — AI-powered template generation, bulk campaigns, contacts CRM, two-way inbox, analytics, and RAG smart replies. Powered by **Twilio WhatsApp API** + **Grok / OpenAI**.
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/Ankitgelda8/whatsapp-business-deploy)
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.com/deploy/whatsapp-business-platform?referralCode=wpCxR7&utm_medium=integration&utm_source=template&utm_campaign=generic)
 
 ## Demo
 
