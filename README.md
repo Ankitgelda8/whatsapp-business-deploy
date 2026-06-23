@@ -4,8 +4,6 @@
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.com/deploy/whatsapp-business-platform?referralCode=wpCxR7&utm_medium=integration&utm_source=template&utm_campaign=generic)
 
-**Source code & full docs:** [github.com/Ankitgelda8/whatsapp-business-platform](https://github.com/Ankitgelda8/whatsapp-business-platform)
-
 ---
 
 ## 🎬 35-Second Demo — Auto Quote Bot (cab rental)
@@ -14,7 +12,7 @@ Full WhatsApp flow: **Hi → pickup → destination → vehicle → quote → BO
 
 [![Watch on YouTube Shorts](https://img.youtube.com/vi/rQkfJ3N8zoc/maxresdefault.jpg)](https://www.youtube.com/shorts/rQkfJ3N8zoc)
 
-**Watch:** [YouTube Shorts](https://www.youtube.com/shorts/rQkfJ3N8zoc) · **Download MP4:** [whatsapp-quote-bot-demo-reel.mp4](https://github.com/Ankitgelda8/whatsapp-business-platform/raw/main/docs/demo/whatsapp-quote-bot-demo-reel.mp4)
+**Watch:** [YouTube Shorts](https://www.youtube.com/shorts/rQkfJ3N8zoc)
 
 **Setup for your car rental company:** WhatsApp / Call **+919175623369**
 
@@ -106,7 +104,7 @@ Category-gated: contractors, retail, etc. keep simple FAQ replies.
 
 **Turn on:** Settings → Auto Quote Bot → category **Cab Rental** → Google Maps key → upload PDF in Knowledge Base.
 
-Sample rate card: [Shree_Om_Travels_Cab_Rate_Card_2026.pdf](https://github.com/Ankitgelda8/whatsapp-business-platform/blob/main/samples/Shree_Om_Travels_Cab_Rate_Card_2026.pdf)
+Upload your own cab rate-card **PDF** in Knowledge Base (vehicle fares, driver halt, toll rules, cancellation policy).
 
 | Toggle | Default |
 |---|---|
@@ -120,12 +118,7 @@ Sample rate card: [Shree_Om_Travels_Cab_Rate_Card_2026.pdf](https://github.com/A
 
 ## Architecture
 
-Pre-built Docker images from GitHub Container Registry:
-
-```
-ghcr.io/ankitgelda8/whatsapp-business-platform/backend:latest
-ghcr.io/ankitgelda8/whatsapp-business-platform/dashboard:latest
-```
+Pre-built container images are pulled automatically when you deploy on Railway.
 
 | Service | Role |
 |---|---|
@@ -146,5 +139,5 @@ WhatsApp via Twilio is roughly **$0.005–$0.05 per message** by country and typ
 
 ## Support
 
-- **Deploy issues:** [open an issue](https://github.com/Ankitgelda8/whatsapp-business-deploy/issues) in this repo
-- **App / features:** [whatsapp-business-platform](https://github.com/Ankitgelda8/whatsapp-business-platform/issues)
+- **Questions & deploy help:** [open an issue](https://github.com/Ankitgelda8/whatsapp-business-deploy/issues) in this repo
+- **Setup for cab rental:** WhatsApp / Call **+919175623369**
