@@ -12,11 +12,9 @@
 
 Full WhatsApp flow: **Hi → pickup → destination → vehicle → quote → BOOK → FAQ**
 
-<p align="center">
-  <video src="https://github.com/Ankitgelda8/whatsapp-business-platform/raw/main/docs/demo/whatsapp-quote-bot-demo-reel.mp4" width="320" controls playsinline></video>
-</p>
+[![Watch on YouTube Shorts](https://img.youtube.com/vi/rQkfJ3N8zoc/maxresdefault.jpg)](https://www.youtube.com/shorts/rQkfJ3N8zoc)
 
-**Download reel:** [whatsapp-quote-bot-demo-reel.mp4](https://github.com/Ankitgelda8/whatsapp-business-platform/raw/main/docs/demo/whatsapp-quote-bot-demo-reel.mp4) · 1080×1920 · Instagram Reels & YouTube Shorts ready
+**Watch:** [YouTube Shorts](https://www.youtube.com/shorts/rQkfJ3N8zoc) · **Download MP4:** [whatsapp-quote-bot-demo-reel.mp4](https://github.com/Ankitgelda8/whatsapp-business-platform/raw/main/docs/demo/whatsapp-quote-bot-demo-reel.mp4)
 
 **Setup for your car rental company:** WhatsApp / Call **+919175623369**
 
