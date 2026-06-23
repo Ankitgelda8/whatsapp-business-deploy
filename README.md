@@ -1,136 +1,152 @@
 # WhatsApp Business Automation Platform
 
-> Complete WhatsApp Business automation — AI-powered template generation, bulk campaigns, contacts CRM, two-way inbox, analytics, and RAG smart replies. Powered by **Twilio WhatsApp API** + **Grok / OpenAI**.
+> Deploy in one click on Railway — WhatsApp CRM, AI campaigns, RAG smart replies, and **Auto Quote Bot** for cab & car rental (Google Maps + PDF rate card).
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.com/deploy/whatsapp-business-platform?referralCode=wpCxR7&utm_medium=integration&utm_source=template&utm_campaign=generic)
 
-## Demo
+**Source code & full docs:** [github.com/Ankitgelda8/whatsapp-business-platform](https://github.com/Ankitgelda8/whatsapp-business-platform)
 
-[![Watch the demo](https://img.youtube.com/vi/Ga4BvhKDfiQ/maxresdefault.jpg)](https://youtu.be/Ga4BvhKDfiQ)
+---
+
+## 🎬 35-Second Demo — Auto Quote Bot (cab rental)
+
+Full WhatsApp flow: **Hi → pickup → destination → vehicle → quote → BOOK → FAQ**
+
+<p align="center">
+  <video src="https://github.com/Ankitgelda8/whatsapp-business-platform/raw/main/docs/demo/whatsapp-quote-bot-demo-reel.mp4" width="320" controls playsinline></video>
+</p>
+
+**Download reel:** [whatsapp-quote-bot-demo-reel.mp4](https://github.com/Ankitgelda8/whatsapp-business-platform/raw/main/docs/demo/whatsapp-quote-bot-demo-reel.mp4) · 1080×1920 · Instagram Reels & YouTube Shorts ready
+
+**Setup for your car rental company:** WhatsApp / Call **+919175623369**
 
 ---
 
 ## One-click deploy
 
-Click the button above. Railway will ask you for **3 required values**:
+Click the **Deploy on Railway** button above. Railway asks for **3 required values**:
 
 | Variable | What to enter |
 |---|---|
-| `JWT_SECRET` | Any long random string — e.g. `openssl rand -hex 32` in a terminal, or just type 50 random characters |
-| `ADMIN_EMAIL` | The email you'll use to log in to the dashboard |
-| `ADMIN_PASSWORD` | A strong password for your dashboard |
+| `JWT_SECRET` | Any long random string — e.g. `openssl rand -hex 32`, or 50+ random characters |
+| `ADMIN_EMAIL` | Email you use to log in to the dashboard |
+| `ADMIN_PASSWORD` | Strong dashboard password (8+ chars) |
 
-Everything else (Postgres URL, Redis URL, dashboard API URL) is wired automatically.
+Postgres URL, Redis URL, and dashboard API URL are wired automatically.
 
-**Optional — AI template generation:**
+### Optional — AI, email fallback & quote bot
 
 | Variable | What to enter |
 |---|---|
-| `GROK_API_KEY` | Your xAI Grok API key from [console.x.ai](https://console.x.ai) — enables Grok-3 text + image generation + RAG smart replies |
-| `OPENAI_API_KEY` | Your OpenAI API key from [platform.openai.com/api-keys](https://platform.openai.com/api-keys) — enables GPT-4o-mini + DALL-E 3 |
-| `RESEND_API_KEY` | Your Resend API key from [resend.com](https://resend.com) — enables email fallback when WhatsApp delivery fails |
-| `MESSAGE_RETENTION_DAYS` | Number of days to keep messages before auto-deletion (default: `15`, set `0` to disable) |
+| `GROK_API_KEY` | [console.x.ai](https://console.x.ai) — Grok-3 text, RAG smart replies, quote bot |
+| `OPENAI_API_KEY` | [platform.openai.com](https://platform.openai.com/api-keys) — GPT-4o-mini, embeddings (optional) |
+| `RESEND_API_KEY` | [resend.com](https://resend.com) — email when WhatsApp delivery fails |
+| `GOOGLE_MAPS_API_KEY` | Google Maps — Geocoding + Distance Matrix (for Auto Quote Bot) |
+| `BUSINESS_PHONE` | Owner phone for quote-bot handoff e.g. `+919175623369` |
+| `BUSINESS_CONTACT_NAME` | Name shown in quote-bot messages |
+| `MESSAGE_RETENTION_DAYS` | Days to keep messages (default `15`, `0` = off) |
 
-You can also add/change these keys any time from **Settings** inside the app — no redeploy needed.
+You can add or change these any time in **Settings** inside the app — no redeploy needed.
 
 ---
 
 ## After deploy
 
-1. Open the **dashboard URL** Railway gives you (the `dashboard` service → Public URL)
+1. Open the **dashboard** service **Public URL** in Railway
 2. Log in with `ADMIN_EMAIL` / `ADMIN_PASSWORD`
-3. Go to **Settings** → follow the in-app wizard to connect Twilio:
-   - Step 1: Create a free Twilio account
-   - Step 2: Enable WhatsApp sandbox for testing
-   - Step 3: Enter your Account SID + Auth Token + WhatsApp number
-   - Step 4: Test the connection
-   - Step 5: Go live with your own business number (reach any customer)
-4. *(Optional)* Go to **Settings → AI Settings** → add your Grok or OpenAI key
-5. Go to **Templates → ⚡ AI Generate** → describe your message → AI writes + images it instantly
+3. **Settings** → connect Twilio (Account SID, Auth Token, WhatsApp number)
+4. Set webhook in Twilio: `https://your-backend.up.railway.app/webhook/twilio`
+5. *(Optional)* **Settings → AI** → add Grok / OpenAI keys
+6. *(Cab rental)* **Knowledge Base** → upload rate-card PDF → enable **Auto Quote Bot**
 
-No terminal. No code. No environment variable editing.
+No terminal. No code. No env editing required for day-to-day use.
 
 ---
 
 ## Features
 
-- ✨ **AI Template Generation** — describe your offer in plain English, Grok or GPT-4o writes the WhatsApp message and generates a product image automatically
-- 🖼️ **AI Image Generation** — Grok Imagine or DALL-E 3 creates matching product/promo images
-- 📊 **Dashboard** — message stats, campaign performance, recent activity
-- 👥 **Contacts CRM** — import CSV, tags, notes, opt-in/out tracking
-- 📢 **Broadcast campaigns** — schedule bulk WhatsApp messages with templates and real-time delivery sync
-- 📋 **Templates** — reusable message templates with `{{variable}}` substitution, image support, CTA buttons
-- 💬 **Inbox** — two-way messaging with chat UI, search contacts by name/phone, conversation bubbles, quick reply
-- 🚨 **Failure Logs** — automatic capture of campaign send failures and Twilio delivery failures (`failed`/`undelivered`)
-- 🗑️ **Message retention** — auto-delete messages older than N days (default: 15, configurable via `MESSAGE_RETENTION_DAYS`)
-- 📈 **Analytics** — delivery rates, open rates, campaign trends
-- ⚙️ **In-app Twilio setup** — no env editing, complete guided wizard
-- 🔒 **Secure** — JWT auth, bcrypt passwords, admin-only access
+### Core platform
+- ✨ **AI template generation** — describe your offer; Grok or GPT-4o writes the message + image
+- 🖼️ **AI image generation** — Grok Imagine or DALL-E 3 for promo images
+- 📊 **Dashboard** — stats, campaigns, recent activity
+- 👥 **Contacts CRM** — CSV import, tags, notes, opt-in/out
+- 📢 **Broadcast campaigns** — bulk WhatsApp with templates + delivery sync
+- 📋 **Templates** — `{{variables}}`, images, CTA buttons
+- 💬 **Inbox** — two-way chat, search, quick reply
+- 📈 **Analytics** — delivery rates, campaign trends
+- 🚨 **Failure logs** — campaign + Twilio delivery failures
+- 🗑️ **Message retention** — auto-cleanup (configurable days)
+- ⚙️ **In-app Twilio setup** — guided wizard
+- 🔒 **JWT auth** — secure admin login
 
----
+### 🧪 Beta (on by default — toggle in Settings)
 
-## 🧪 Beta Features
+| Feature | What it does |
+|---|---|
+| **RAG smart replies** | AI answers from your Knowledge Base (TXT/CSV/PDF) |
+| **Knowledge Base** | Upload docs; chunked in Postgres, survives redeploy |
+| **Campaign scheduler** | Send campaigns at a future date/time (BullMQ) |
+| **Email fallback** | Resend email when WhatsApp delivery fails |
+| **Multi-language** | Language on contacts, templates, campaigns |
+| **Delivery sync** | Pull live Twilio status (sent/delivered/read/failed) |
 
-All beta features are **on by default**. Toggle them any time from **Settings → Features** — no redeploy needed.
+### 🚗 Auto Quote Bot *(cab / rental only — off by default)*
 
-### 🤖 RAG Smart Replies
-Automatically answers incoming WhatsApp messages using your own knowledge base. Upload PDFs, TXT, or CSV files to the **Knowledge Base** page — the AI (Grok-3) reads them and crafts accurate replies.
+Category-gated: contractors, retail, etc. keep simple FAQ replies.
 
-- Requires `GROK_API_KEY`
-- Toggle: `FEATURE_RAG_REPLIES=true/false`
+**One question per WhatsApp message:**
 
-### 📅 Campaign Scheduler
-Queue campaigns to send at a future date/time using BullMQ. Works alongside existing broadcast campaigns.
+1. Hi → pickup only → destination separately
+2. Vehicle → passengers → one-way / round trip
+3. Departure → return date → pickup time
+4. Summary → customer replies **YES**
+5. **Google Maps** distance + suspicious-route check
+6. **RAG** reads fare rules from uploaded **PDF rate card**
+7. Instant quote — base fare, round trip, driver halt, toll notes
+8. **BOOK** → booking captured
+9. Post-quote FAQ from PDF; else **owner phone** handoff
 
-- Toggle: `FEATURE_CAMPAIGN_SCHEDULER=true/false`
+**Turn on:** Settings → Auto Quote Bot → category **Cab Rental** → Google Maps key → upload PDF in Knowledge Base.
 
-### 📧 Email / SMS Fallback
-When a WhatsApp message fails to deliver, the system automatically re-sends it via email (Resend) or SMS fallback.
+Sample rate card: [Shree_Om_Travels_Cab_Rate_Card_2026.pdf](https://github.com/Ankitgelda8/whatsapp-business-platform/blob/main/samples/Shree_Om_Travels_Cab_Rate_Card_2026.pdf)
 
-- Requires `RESEND_API_KEY`
-- Toggle: `FEATURE_EMAIL_SMS_FALLBACK=true/false`
-
-### 🌍 Multi-language Support
-Auto-detects the language of incoming messages and replies in the same language.
-
-- Toggle: `FEATURE_MULTILANGUAGE=true/false`
-
-### 📊 Campaign Delivery Sync
-Syncs real-time Twilio delivery status for all campaign messages. Click **Sync Status** on any campaign to pull the latest `sent / delivered / read / failed` status directly from Twilio.
-
-### 🚨 Failure Logs
-Automatically logs every campaign send failure and Twilio delivery failure. Each entry shows the contact, message, error reason, and timestamp. Visible from **Failure Logs** in the sidebar.
-
-### 🗑️ Message Retention
-Auto-cleans old messages on a configurable schedule. Set the retention period in the **Messages** page or via the `MESSAGE_RETENTION_DAYS` environment variable (default: 15 days). Set to `0` to disable.
+| Toggle | Default |
+|---|---|
+| Campaign Scheduler | ✅ On |
+| Email/SMS Fallback | ✅ On |
+| Multi-language | ✅ On |
+| RAG Smart Replies | ✅ On |
+| **Auto Quote Bot** | ❌ Off |
 
 ---
 
 ## Architecture
 
-This template pulls **pre-built Docker images** from GitHub Container Registry:
+Pre-built Docker images from GitHub Container Registry:
 
 ```
 ghcr.io/ankitgelda8/whatsapp-business-platform/backend:latest
 ghcr.io/ankitgelda8/whatsapp-business-platform/dashboard:latest
 ```
 
-Services deployed by Railway:
-- **Postgres** — stores contacts, messages, campaigns, settings
-- **Redis** — message queue and rate limiting
-- **backend** — Node.js / Express API + Prisma ORM
-- **dashboard** — React + Vite SPA served by nginx
+| Service | Role |
+|---|---|
+| **Postgres** | Contacts, messages, campaigns, knowledge chunks |
+| **Redis** | Queue + rate limiting |
+| **backend** | Node.js / Express / Prisma / webhooks |
+| **dashboard** | React + Vite SPA (nginx) |
 
 ---
 
 ## Twilio pricing
 
-WhatsApp messaging via Twilio costs approximately **$0.005–$0.05 per message** depending on country and message type. A free trial account includes $15 credit.
+WhatsApp via Twilio is roughly **$0.005–$0.05 per message** by country and type. Trial includes ~$15 credit.
 
-See [twilio.com/whatsapp/pricing](https://www.twilio.com/en-us/whatsapp/pricing) for current rates.
+[twilio.com/whatsapp/pricing](https://www.twilio.com/en-us/whatsapp/pricing)
 
 ---
 
 ## Support
 
-For issues or questions, open an issue in this repository.
+- **Deploy issues:** [open an issue](https://github.com/Ankitgelda8/whatsapp-business-deploy/issues) in this repo
+- **App / features:** [whatsapp-business-platform](https://github.com/Ankitgelda8/whatsapp-business-platform/issues)
