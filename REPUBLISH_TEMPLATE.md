@@ -56,8 +56,8 @@ The broken template (`whatsapp-business-platform` with duplicate services) was *
 
 | Field | Value |
 |-------|-------|
-| URL | https://railway.com/deploy/whatsapp-template--1 |
-| Template ID | `c7cb76af-5e22-40b3-8d90-4c9a05cbd8f1` |
+| URL | https://railway.com/deploy/ai-whatsapp-automated-business-platform |
+| Template ID | `c92cc33d-81ba-4f19-ab68-3601667cc9ec` |
 | Source project | `whatsapp-template-clean` (`39bd2686-f1c9-47a3-b357-613f488b151a`) |
 | Editor | https://railway.com/workspace/templates/c7cb76af-5e22-40b3-8d90-4c9a05cbd8f1 |
 
@@ -66,7 +66,7 @@ Services: **Postgres, Redis, backend, dashboard** — no duplicates.
 ## Step 4 — Update marketplace listing (already applied)
 
 ```bash
-railway templates update whatsapp-template--1 \
+railway templates update ai-whatsapp-automated-business-platform \
   --category Automation \
   --description "AI WhatsApp CRM + cab quote bot. Auto-wired. 5-min Twilio setup." \
   --readme-file TEMPLATE_OVERVIEW.md \
@@ -90,7 +90,7 @@ Every answered question = higher deploy success = more 24/7 usage = more kickbac
 ## Verify deploy button
 
 ```markdown
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/whatsapp-template--1?utm_medium=integration&utm_source=button&utm_campaign=whatsapp-business-platform)
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/ai-whatsapp-automated-business-platform?utm_medium=integration&utm_source=button&utm_campaign=whatsapp-business-platform)
 ```
 
 Remove `referralCode` from the main button — that is affiliate income (separate from template kickbacks). Use referral links only in your personal shares.
