@@ -89,4 +89,4 @@ https://YOUR-BACKEND-DOMAIN/webhook/twilio
 
 Railway is a singular platform to deploy your full infrastructure stack. This template gives you a production WhatsApp automation backend in one click — database, queue, API, and dashboard pre-wired — so you can focus on your business, not DevOps.
 
-**Need help?** [Open a GitHub issue](https://github.com/Ankitgelda8/whatsapp-business-deploy/issues) or ask on [Railway Station](https://station.railway.com/all-templates/59f8b6da-e733-46cd-a388-efad515a61f4).
+**Need help?** [Open a GitHub issue](https://github.com/Ankitgelda8/whatsapp-business-deploy/issues) or ask on [Railway Station](https://station.railway.com/all-templates/c7cb76af-5e22-40b3-8d90-4c9a05cbd8f1).

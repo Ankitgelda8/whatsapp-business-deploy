@@ -48,32 +48,31 @@ In Railway dashboard → each service:
 
 Verify: open dashboard URL → login works → backend `/health` returns OK.
 
-## Step 3 — Regenerate template (fixes duplicate service)
+## Step 3 — Done: clean template published
+
+The broken template (`whatsapp-business-platform` with duplicate services) was **unpublished**.
+
+**New clean template (4 services, volumes, auto-wired URLs):**
+
+| Field | Value |
+|-------|-------|
+| URL | https://railway.com/deploy/whatsapp-template--1 |
+| Template ID | `c7cb76af-5e22-40b3-8d90-4c9a05cbd8f1` |
+| Source project | `whatsapp-template-clean` (`39bd2686-f1c9-47a3-b357-613f488b151a`) |
+| Editor | https://railway.com/workspace/templates/c7cb76af-5e22-40b3-8d90-4c9a05cbd8f1 |
+
+Services: **Postgres, Redis, backend, dashboard** — no duplicates.
+
+## Step 4 — Update marketplace listing (already applied)
 
 ```bash
-railway templates create --project <whatsapp-template-source-project-id> --json
-```
-
-This opens the template editor. Confirm:
-
-- 4 services only
-- backend + dashboard use `Ankitgelda8/whatsapp-business-deploy` repo
-- No duplicate service names
-
-## Step 4 — Update marketplace listing
-
-```bash
-cd "/Users/ankitgelda/whatsapp railway/whatsapp-business-deploy"
-
-railway templates update whatsapp-business-platform \
+railway templates update whatsapp-template--1 \
   --category Automation \
-  --description "AI WhatsApp platform with cab quote bot, campaigns, RAG inbox — auto-wired, 5-min setup" \
+  --description "AI WhatsApp CRM + cab quote bot. Auto-wired. 5-min Twilio setup." \
   --readme-file TEMPLATE_OVERVIEW.md \
   --image "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/240px-WhatsApp.svg.png" \
   --json
 ```
-
-Template ID: `59f8b6da-e733-46cd-a388-efad515a61f4`
 
 ## Step 5 — Enable cash kickbacks
 
@@ -91,7 +90,7 @@ Every answered question = higher deploy success = more 24/7 usage = more kickbac
 ## Verify deploy button
 
 ```markdown
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/whatsapp-business-platform?utm_medium=integration&utm_source=button&utm_campaign=whatsapp-business-platform)
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/whatsapp-template--1?utm_medium=integration&utm_source=button&utm_campaign=whatsapp-business-platform)
 ```
 
 Remove `referralCode` from the main button — that is affiliate income (separate from template kickbacks). Use referral links only in your personal shares.

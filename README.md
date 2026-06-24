@@ -2,7 +2,7 @@
 
 > Deploy in one click on Railway — WhatsApp CRM, AI campaigns, RAG smart replies, and **Auto Quote Bot** for cab & car rental (Google Maps + PDF rate card).
 
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/whatsapp-business-platform?utm_medium=integration&utm_source=button&utm_campaign=whatsapp-business-platform)
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/whatsapp-template--1?utm_medium=integration&utm_source=button&utm_campaign=whatsapp-business-platform)
 
 ---
 
@@ -145,5 +145,5 @@ WhatsApp via Twilio is roughly **$0.005–$0.05 per message** by country and typ
 ## Support
 
 - **Questions & deploy help:** [open an issue](https://github.com/Ankitgelda8/whatsapp-business-deploy/issues) in this repo
-- **Railway template queue:** [Station thread](https://station.railway.com/all-templates/59f8b6da-e733-46cd-a388-efad515a61f4)
+- **Railway template queue:** [Station thread](https://station.railway.com/all-templates/c7cb76af-5e22-40b3-8d90-4c9a05cbd8f1)
 - **Setup for cab rental:** WhatsApp / Call **+919175623369**
