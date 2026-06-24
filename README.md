@@ -2,7 +2,7 @@
 
 > Deploy in one click on Railway — WhatsApp CRM, AI campaigns, RAG smart replies, and **Auto Quote Bot** for cab & car rental (Google Maps + PDF rate card).
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.com/deploy/whatsapp-business-platform?referralCode=wpCxR7&utm_medium=integration&utm_source=template&utm_campaign=generic)
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/whatsapp-business-platform?utm_medium=integration&utm_source=button&utm_campaign=whatsapp-business-platform)
 
 ---
 
@@ -20,15 +20,15 @@ Full WhatsApp flow: **Hi → pickup → destination → vehicle → quote → BO
 
 ## One-click deploy
 
-Click the **Deploy on Railway** button above. Railway asks for **3 required values**:
+Click the **Deploy on Railway** button above.
 
 | Variable | What to enter |
 |---|---|
-| `JWT_SECRET` | Any long random string — e.g. `openssl rand -hex 32`, or 50+ random characters |
 | `ADMIN_EMAIL` | Email you use to log in to the dashboard |
-| `ADMIN_PASSWORD` | Strong dashboard password (8+ chars) |
 
-Postgres URL, Redis URL, and dashboard API URL are wired automatically.
+**Auto-generated (no input needed):** `JWT_SECRET`, `ADMIN_PASSWORD`, `DATABASE_URL`, `REDIS_URL`, `PUBLIC_URL`, `VITE_API_URL`
+
+After deploy, find your auto-generated `ADMIN_PASSWORD` in Railway → **backend** service → **Variables** tab.
 
 ### Optional — AI, email fallback & quote bot
 
@@ -137,7 +137,13 @@ WhatsApp via Twilio is roughly **$0.005–$0.05 per message** by country and typ
 
 ---
 
+## Template maintainers
+
+- **Republish / fix duplicate services:** [REPUBLISH_TEMPLATE.md](REPUBLISH_TEMPLATE.md)
+- **Marketplace overview copy:** [TEMPLATE_OVERVIEW.md](TEMPLATE_OVERVIEW.md)
+
 ## Support
 
 - **Questions & deploy help:** [open an issue](https://github.com/Ankitgelda8/whatsapp-business-deploy/issues) in this repo
+- **Railway template queue:** [Station thread](https://station.railway.com/all-templates/59f8b6da-e733-46cd-a388-efad515a61f4)
 - **Setup for cab rental:** WhatsApp / Call **+919175623369**
