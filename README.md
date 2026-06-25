@@ -2,7 +2,7 @@
 
 > Deploy in one click on Railway — WhatsApp CRM, AI campaigns, RAG smart replies, and **Auto Quote Bot** for cab & car rental (Google Maps + PDF rate card).
 
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/ai-whatsapp-automated-business-platform?utm_medium=integration&utm_source=button&utm_campaign=whatsapp-business-platform)
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/whatsapp-business-platform?utm_medium=integration&utm_source=button&utm_campaign=whatsapp-business-platform)
 
 ---
 
@@ -56,6 +56,21 @@ You can add or change these any time in **Settings** inside the app — no redep
 6. *(Cab rental)* **Knowledge Base** → upload rate-card PDF → enable **Auto Quote Bot**
 
 No terminal. No code. No env editing required for day-to-day use.
+
+### If `VITE_API_URL` fails to auto-generate (shows `https:///api/v1`)
+
+Since all services are already active:
+
+1. In your Railway project, go to the **backend** service (the one with the API code / `/health` endpoint / the repo service that should serve the API).
+2. If it has no public domain yet → **Generate Domain** (or Settings → Networking → Add public domain).
+3. Copy the full public URL (e.g. `https://your-backend-xxx.up.railway.app`).
+4. Go to the **dashboard** service → **Variables** tab.
+5. Edit `VITE_API_URL` and set it to:
+   ```
+   https://your-backend-public-url/api/v1
+   ```
+
+Redeploy the dashboard service if needed (or just restart it).
 
 ---
 

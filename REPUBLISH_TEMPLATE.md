@@ -56,8 +56,8 @@ The broken template (`whatsapp-business-platform` with duplicate services) was *
 
 | Field | Value |
 |-------|-------|
-| URL | https://railway.com/deploy/ai-whatsapp-automated-business-platform |
-| Template ID | `c92cc33d-81ba-4f19-ab68-3601667cc9ec` |
+| URL | https://railway.com/deploy/whatsapp-business-platform |
+| (Old slug you want to restore) |  |
 | Source project | `whatsapp-template-clean` (`39bd2686-f1c9-47a3-b357-613f488b151a`) |
 | Editor | https://railway.com/workspace/templates/c7cb76af-5e22-40b3-8d90-4c9a05cbd8f1 |
 
