@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+
+# Debug / template patching artifacts
+.*-template-config.json
+.template-*.json
+.patch-template.mjs
+.template-editor.png
+.template-query.json
+.template-deploy-payload.json
+
+# OS / editor
+.DS_Store
+*.log
