@@ -2,7 +2,7 @@
 
 > Deploy in one click on Railway — WhatsApp CRM, AI campaigns, RAG smart replies, and **Auto Quote Bot** for cab & car rental (Google Maps + PDF rate card).
 
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/ai-whatsapp-automated-business-platform?referralCode=wpCxR7&utm_medium=integration&utm_source=template&utm_campaign=generic)
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/ai-whatsapp-automated-business-platform?utm_medium=integration&utm_source=button&utm_campaign=whatsapp-business-platform)
 
 ---
 
