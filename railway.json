@@ -149,6 +149,14 @@
         "QUOTE_BOT_CATEGORY": {
           "description": "Quote bot category: cab_rental, tour_operator, or none",
           "default": "none"
+        },
+        "PLATFORM_BILLING_URL": {
+          "description": "Operator license API — payments go to template owner (customers never add RAZORPAY keys)",
+          "default": "https://license-server-production-fe55.up.railway.app/api/v1/platform-billing"
+        },
+        "PLATFORM_BILLING_REGISTER_KEY": {
+          "description": "Shared register key from template owner",
+          "default": "7e07488a469ffe1f3d01eff7ae1c5cf2"
         }
       }
     },
