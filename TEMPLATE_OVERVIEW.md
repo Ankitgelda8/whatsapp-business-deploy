@@ -17,7 +17,7 @@ Twilio credentials, Grok/OpenAI keys, and Google Maps are optional at deploy and
 1. Click **Deploy** → enter your `ADMIN_EMAIL` → wait for all 4 services to go green
 2. Open the **dashboard** public URL (not backend)
 3. Log in with `ADMIN_EMAIL` + auto-generated password (check backend **Variables** tab for `ADMIN_PASSWORD`, or reset in Settings)
-4. On first login, enter an email address and a phone number with country code (for example `+919876543210`). Enter the code sent to that phone on WhatsApp. The template provider keeps those details so they can reach you about this deployment.
+4. On first login, enter an email address and a WhatsApp number with country code (for example `+919876543210`). No code is required. The template provider keeps those details so they can reach you about this deployment.
 5. Go to **Settings** → **Twilio Setup Wizard** → connect sandbox (free $15 credit)
 6. Copy webhook URL → paste in Twilio Console → send a test WhatsApp message
 
