@@ -33,6 +33,8 @@ Twilio credentials, Grok/OpenAI keys, and Google Maps are optional at deploy and
 
 - **Cab & bus rental quotes** — automated fare quotes from PDF rate cards + Google Maps
 - **Bulk WhatsApp campaigns** — broadcast to contact lists with delivery tracking
+- **Import from your own Postgres** — one read-only SELECT, mapped to phone, name, and email. Extra columns can fill a message as `{{note}}`
+- **Connect an app you already run** — create an API key in Settings and send WhatsApp updates from that app. The key works only for your deployment.
 - **AI customer support** — RAG replies from uploaded FAQs and product catalogs
 - **Two-way inbox** — read and reply to every WhatsApp message from a web dashboard
 - **Multi-language replies** — Hindi, Marathi, Tamil, Gujarati, Telugu, and more

@@ -81,6 +81,8 @@ Redeploy the dashboard service if needed (or just restart it).
 - 🖼️ **AI image generation** — Grok Imagine or DALL-E 3 for promo images
 - 📊 **Dashboard** — stats, campaigns, recent activity
 - 👥 **Contacts CRM** — CSV import, tags, notes, opt-in/out
+- 🗄️ **Import from your database** — paste a Postgres URL and one SELECT. Map phone, name, and email. Other columns can be used in a message as `{{note}}`. The app only reads that query.
+- 🔌 **Connect your own app** — create an API key in Settings. Your existing application sends WhatsApp updates to `POST /api/v1/connect/messages`. The key stays on your deployment.
 - 📢 **Broadcast campaigns** — bulk WhatsApp with templates + delivery sync
 - 📋 **Templates** — `{{variables}}`, images, CTA buttons
 - 💬 **Inbox** — two-way chat, search, quick reply
