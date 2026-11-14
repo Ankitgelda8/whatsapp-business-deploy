@@ -1,4 +1,4 @@
-# Rebuild 2026-11-14: paged lists, Postgres import, and the connect API.
+# Rebuild 2026-11-14: six-month trial and verified deployer contact.
 FROM ghcr.io/ankitgelda8/whatsapp-business-platform/dashboard:latest
 
 # Override entrypoint so broken template VITE_API_URL (https:///) falls back to
