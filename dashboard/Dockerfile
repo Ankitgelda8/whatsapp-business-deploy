@@ -1,4 +1,4 @@
-# Rebuild 2026-11-14: save email and WhatsApp number, no code.
+# Rebuild 2026-11-16: allow a PDF on a WhatsApp template.
 FROM ghcr.io/ankitgelda8/whatsapp-business-platform/dashboard:latest
 
 # Override entrypoint so broken template VITE_API_URL (https:///) falls back to
